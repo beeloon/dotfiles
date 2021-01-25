@@ -1,0 +1,7 @@
+[user]
+	name = Bohdan Bilyk
+	email = bohdanbilykwork@gmail.com
+[core]
+	editor = vim
+[init]
+	defaultBranch = main
