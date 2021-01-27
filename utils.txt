@@ -1,0 +1,10 @@
+::terminal::
+vim
+htop
+inxi
+neofetch
+
+::system diagnostics::
+cpu-x
+memtest86+
+GSmartControl
