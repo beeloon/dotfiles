@@ -1,24 +1,48 @@
 {
     "window.menuBarVisibility": "toggle",
-    "window.zoomLevel": 1,
     "editor.fontSize": 20,
     "editor.wordWrap": "on",
     "editor.formatOnSave": true,
+    "files.eol": "\n",
     "workbench.iconTheme": "material-icon-theme",
-    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
     "emmet.includeLanguages": {
         "javascript": "javascriptreact"
     },
+    // Extention related settings
+    // ESLint
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    // Prettier
+    "prettier.tabWidth": 4,
+    "prettier.singleQuote": true,
+    // Languages
     "[markdown]": {
         "editor.wordWrap": "on",
         "editor.quickSuggestions": false,
-        "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
     },
     "[html]": {
         "editor.defaultFormatter": "vscode.html-language-features"
     },
     "[javascript]": {
-        "editor.tabSize": 2,
         "editor.defaultFormatter": "svipas.prettier-plus"
-    }
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    // Ukraine Time Zone => UTC +3
+    "themeswitcher.utcOffset": 3,
+    "themeswitcher.mappings": [
+        {
+            // Github Theme
+            "time": "06:00",
+            "theme": "GitHub Light Default"
+        },
+        {
+            "time": "20:00",
+            "theme": "GitHub Dark Default"
+        }
+    ],
+    "workbench.colorTheme": "GitHub Light Default"
 }
