@@ -1,6 +1,8 @@
 ## Plugins
 1. [autojump](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/autojump) 
 2. [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
+3. [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md)
+
 
 ## Utils
 1. [NVM](https://github.com/nvm-sh/nvm)

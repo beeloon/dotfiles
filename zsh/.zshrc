@@ -77,6 +77,7 @@ plugins=(
     sudo
     extract
     autojump
+    zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
