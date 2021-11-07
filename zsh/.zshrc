@@ -8,7 +8,6 @@ export ZSH="/home/theo/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME=""
 ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
@@ -77,17 +76,11 @@ plugins=(
     npm
     sudo
     extract
+    autojump
 )
 
 source $ZSH/oh-my-zsh.sh
-
-# --- Pure loading ---
-
-# autoload -U promptinit; promptinit
-# zstyle ':prompt:pure:prompt:*' color cyan
-# prompt pure
-
-# --- End Pure loading ---
+source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
 
@@ -114,3 +107,20 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Golang
+export PATH=$PATH:/usr/local/go/bin
+# Flutter
+export PATH="$PATH:`pwd`/.flutter-main/bin"
+# NVM
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# GCLOUD
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/theo/google-cloud-sdk/path.zsh.inc' ]; then . '/home/theo/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/theo/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/theo/google-cloud-sdk/completion.zsh.inc'; fi
+
+
