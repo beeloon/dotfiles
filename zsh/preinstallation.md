@@ -1,3 +1,4 @@
+<!-- ZSH plugins can be put in .oh-my-zsh/custom/plugins/ folder -->
 ## Plugins
 1. [autojump](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/autojump) 
 2. [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)

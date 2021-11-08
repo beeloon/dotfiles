@@ -78,10 +78,10 @@ plugins=(
     extract
     autojump
     zsh-autosuggestions
+    zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
-source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
 
