@@ -1,17 +1,18 @@
 {
-    "window.menuBarVisibility": "toggle",
-    "editor.fontSize": 20,
+    "editor.fontSize": 16,
     "editor.wordWrap": "on",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true,
+        "source.fixAll": true,
+        "source.organizeImports": true
+    },
     "files.eol": "\n",
     "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "GitHub Light Default",
     "emmet.includeLanguages": {
         "javascript": "javascriptreact"
-    },
-    // Extention related settings
-    // ESLint
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
     },
     // Prettier
     "prettier.tabWidth": 4,
@@ -26,23 +27,26 @@
         "editor.defaultFormatter": "vscode.html-language-features"
     },
     "[javascript]": {
-        "editor.defaultFormatter": "svipas.prettier-plus"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[dart]": {
+        "editor.tabSize": 2
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "dart.debugExternalPackageLibraries": false,
+    "dart.debugSdkLibraries": false,
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features"
-    },
-    // Ukraine Time Zone => UTC +3
-    "themeswitcher.utcOffset": 3,
-    "themeswitcher.mappings": [
-        {
-            // Github Theme
-            "time": "06:00",
-            "theme": "GitHub Light Default"
-        },
-        {
-            "time": "20:00",
-            "theme": "GitHub Dark Default"
-        }
-    ],
-    "workbench.colorTheme": "GitHub Light Default"
+    }
 }
