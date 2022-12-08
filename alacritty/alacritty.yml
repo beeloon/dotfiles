@@ -46,8 +46,8 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 6
-    y: 6
+    x: 10
+    y: 10
 
   # Spread additional padding evenly around the terminal content.
   #dynamic_padding: false
@@ -61,7 +61,7 @@ window:
   # Values for `decorations` (macOS only):
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background and no title bar buttons
-  decorations: full
+  decorations: buttonless
 
   # Background opacity
   #
@@ -77,7 +77,7 @@ window:
   #
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
-  startup_mode: Maximized
+  startup_mode: Windowed
 
   # Window title
   #title: Alacritty
@@ -100,7 +100,7 @@ window:
   scrolling:
     # Maximum number of lines in the scrollback buffer.
     # Specifying '0' will disable scrolling.
-    history: 5000
+    history: 100000
 # Scrolling distance multiplier.
 #multiplier: 3
 
@@ -115,7 +115,7 @@ font:
   #   - (Windows) Consolas
   # The `style` can be specified to pick a specific face.
   normal:
-    family: monospace
+    family: Menlo
     style: Regular
   # Bold font face
   # Font family
@@ -124,7 +124,7 @@ font:
   # value specified for the normal font.
   # The `style` can be specified to pick a specific face.
   bold:
-    family: monospace
+    family: Menlo
     style: Bold
   # Italic font face
   # Font family
@@ -133,7 +133,7 @@ font:
   # value specified for the normal font.
   # The `style` can be specified to pick a specific face.
   italic:
-    family: monospace
+    family: Menlo
     style: Italic
   # Bold italic font face
   # Font family
@@ -142,11 +142,11 @@ font:
   # value specified for the normal font.
   # The `style` can be specified to pick a specific face.
   bold_italic:
-    family: monospace
+    family: Menlo
     style: Bold Italic
 
   # Point size
-  size: 14.0
+  size: 20.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -162,12 +162,6 @@ font:
     x: 0
     y: 0
 
-  # Thin stroke font rendering (macOS only)
-  #
-  # Thin strokes are suitable for retina displays, but for non-retina screens
-  # it is recommended to set `use_thin_strokes` to `false`.
-  use_thin_strokes: false
-
   # If `true`, bold text is drawn using the bright color variants.
   draw_bold_text_with_bright_colors: false
 
@@ -175,8 +169,8 @@ font:
 colors:
   # Default colors
   primary:
-    background: '#1d1f21'
-    foreground: '#c5c8c6'
+    background: "#1d1f21"
+    foreground: "#c5c8c6"
   # Bright and dim foreground colors
   #
   # The dimmed foreground color is calculated automatically if it is not
@@ -193,8 +187,8 @@ colors:
   # Allowed values are CellForeground/CellBackground, which reference the
   # affected cell, or hexadecimal colors like #ff00ff.
   cursor:
-    text: '0x002b36'
-    cursor: '0x93a1a1'
+    text: "0x002b36"
+    cursor: "0x93a1a1"
 
   # Vi mode cursor colors
   #
@@ -257,25 +251,25 @@ colors:
 
   # Normal colors
   normal:
-    black: '#1d1f21'
-    red: '#cc6666'
-    green: '#b5bd68'
-    yellow: '#f0c674'
-    blue: '#81a2be'
-    magenta: '#b294bb'
-    cyan: '#8abeb7'
-    white: '#c5c8c6'
+    black: "#1d1f21"
+    red: "#cc6666"
+    green: "#b5bd68"
+    yellow: "#f0c674"
+    blue: "#81a2be"
+    magenta: "#b294bb"
+    cyan: "#8abeb7"
+    white: "#c5c8c6"
 
   # Bright colors
   bright:
-    black: '#666666'
-    red: '#d54e53'
-    green: '#b9ca4a'
-    yellow: '#e7c547'
-    blue: '#7aa6da'
-    magenta: '#c397d8'
-    cyan: '#70c0b1'
-    white: '#eaeaea'
+    black: "#666666"
+    red: "#d54e53"
+    green: "#b9ca4a"
+    yellow: "#e7c547"
+    blue: "#7aa6da"
+    magenta: "#c397d8"
+    cyan: "#70c0b1"
+    white: "#eaeaea"
   # Dim colors
   #
   # If the dim colors are not set, they will be calculated automatically based
@@ -299,12 +293,12 @@ colors:
   #   `- { index: 16, color: '#ff00ff' }`
   #
   indexed_colors:
-    - { index: 16, color: '0xcb4b16' }
-    - { index: 17, color: '0xd33682' }
-    - { index: 18, color: '0x073642' }
-    - { index: 19, color: '0x586e75' }
-    - { index: 20, color: '0x839496' }
-    - { index: 21, color: '0xeee8d5' }
+    - { index: 16, color: "0xcb4b16" }
+    - { index: 17, color: "0xd33682" }
+    - { index: 18, color: "0x073642" }
+    - { index: 19, color: "0x586e75" }
+    - { index: 20, color: "0x839496" }
+    - { index: 21, color: "0xeee8d5" }
 
   # Transparent cell backgrounds
   #
@@ -376,7 +370,7 @@ cursor:
   #   - Off: Disable blinking by default
   #   - On: Enable blinking by default
   #   - Always: Force the cursor to always blink
-  blinking: Always
+  blinking: On
 
   # Vi mode cursor style
   #
@@ -719,14 +713,32 @@ working_directory: None
 # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
 key_bindings:
-  - { key: Paste, action: Paste }
-  - { key: Copy, action: Copy }
   - { key: L, mods: Control, action: ClearLogNotice }
   - { key: L, mods: Control, mode: ~Vi|~Search, chars: "\x0c" }
   - { key: PageUp, mods: Shift, mode: ~Alt, action: ScrollPageUp }
   - { key: PageDown, mods: Shift, mode: ~Alt, action: ScrollPageDown }
   - { key: Home, mods: Shift, mode: ~Alt, action: ScrollToTop }
   - { key: End, mods: Shift, mode: ~Alt, action: ScrollToBottom }
+# (macOS only)
+#- { key: K,              mods: Command, mode: ~Vi|~Search, chars: "\x0c"                 }
+#- { key: K,              mods: Command, mode: ~Vi|~Search, action: ClearHistory          }
+#- { key: Key0,           mods: Command,                    action: ResetFontSize         }
+#- { key: Equals,         mods: Command,                    action: IncreaseFontSize      }
+#- { key: Plus,           mods: Command,                    action: IncreaseFontSize      }
+#- { key: NumpadAdd,      mods: Command,                    action: IncreaseFontSize      }
+#- { key: Minus,          mods: Command,                    action: DecreaseFontSize      }
+#- { key: NumpadSubtract, mods: Command,                    action: DecreaseFontSize      }
+#- { key: C,              mods: Command, mode: Vi|~Search,  action: ClearSelection        }
+#- { key: H,              mods: Command,                    action: Hide                  }
+#- { key: H,              mods: Command|Alt,                action: HideOtherApplications }
+#- { key: M,              mods: Command,                    action: Minimize              }
+#- { key: Q,              mods: Command,                    action: Quit                  }
+#- { key: W,              mods: Command,                    action: Quit                  }
+#- { key: N,              mods: Command,                    action: SpawnNewInstance      }
+#- { key: F,              mods: Command|Control,            action: ToggleFullscreen      }
+#- { key: F,              mods: Command, mode: ~Search,     action: SearchForward         }
+#- { key: B,              mods: Command, mode: ~Search,     action: SearchBackward        }
+
 # Vi Mode
 #- { key: Space,  mods: Shift|Control, mode: ~Search,    action: ToggleViMode            }
 #- { key: Space,  mods: Shift|Control, mode: Vi|~Search, action: ScrollToBottom          }
